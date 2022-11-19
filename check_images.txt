@@ -1,0 +1,20 @@
+Questions regarding Uploaded Image Classification:
+
+1. Did the three model architectures classify the breed of dog in Dog_01.jpg to be the same breed? If not, report the differences in the classifications.
+
+Answer: Yes, it has correctly identified the picture of a Samoyed.
+
+
+2. Did each of the three model architectures classify the breed of dog in Dog_01.jpg to be the same breed of dog as that model architecture classified Dog_02.jpg? If not, report the differences in the classifications.
+
+Answer: Yes, all the three model architectures classified Dog_02.jpg the same as Dog_01.jpg, which is a Samoyed.
+
+
+3. Did the three model architectures correctly classify Animal_Name_01.jpg and Object_Name_01.jpg to not be dogs? If not, report the misclassifications.
+
+Answer: Yes, all the three model architectures correctly identified Tiger_01.jpg as an image of a tiger and  ClassLabelDog set to 0 hence does not identify the picture as a dog.
+
+
+4. Based upon your answers for questions 1. - 3. above, select the model architecture that you feel did the best at classifying the four uploaded images. Describe why you selected that model architecture as the best on uploaded image classification.
+
+Answer: The Resnet model is the clear winner here, as while all the models are correctly able to identify whether or not the image is a picture of a dog or not, and identify the breed of the dog correctly, the Resnet model was also able to identify the Teapot_01.jpg as a teapot, whereas the other models classified it as a coffeepot.
