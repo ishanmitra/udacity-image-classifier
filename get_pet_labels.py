@@ -47,16 +47,25 @@ def get_pet_labels(image_dir):
     results_dic = {}
     
     for index, file in enumerate(filelist):
-        # Use rfind to get index of the last instance of . in string
-        # If . found then substring otherwise ignore
-        # Replace _ to whitespace
-        # Change to lowercase
+        
+
         # If character is not 0-9 then ignore
         # Strip excessive whitespace and newline if any
+              
+        # Updated for clarity and reduction of code
+        # Change to lowercase
+        # Replace _ to whitespace
+        file_name = filelist[index].lower().replace("_", " ")
+        
+        # Use rfind to get index of the last instance of . in string
+        # If . found then substring otherwise ignore
         find_period_index = filelist[index].rfind(".")
-        if (find_period_index == -1):
-            results_dic[file] = [ "".join(x for x in filelist[index].lower().replace("_", " ") if not x.isdigit()).strip() ]
-        else:
-            results_dic[file] = [ "".join(x for x in filelist[index][:filelist[index].rfind(".")].lower().replace("_", " ") if not x.isdigit()).strip() ]
+        if not find_period_index == -1:
+            file_name = file_name[ :find_period_index]
+        
+        # If character is not 0-9 then ignore
+        # Strip excessive whitespace and newline if any
+        # Store in dictionary as a list
+        results_dic[file] = [ "".join(x for x in file_name if not x.isdigit()).strip() ]
     
     return results_dic
